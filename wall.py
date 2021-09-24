@@ -15,6 +15,8 @@ print("⠄⠄⠄⠄⠄⠄⠄⣿⡟⣷⠄⠹⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄�
 from PIL import Image, ImageDraw, ImageEnhance
 import random
 import time
+import ctypes
+import os
 random.seed()
 
 width = 1920
@@ -44,7 +46,7 @@ while True:
         #draw.line([(0, i), (width, i * 4 + axis_tilt)], fill=(color2, color1, color3), width=(abs(axis_tilt // 2)))
         #img = enhancer.enhance(1.1)
 
-    img.show()
-    img.save("Image" + str(color1) + ".png")
+    img.save("image.png")
+    ctypes.windll.user32.SystemParametersInfoW(20, 0, os.getcwd()+"\image.png" , 0)
 
-    time.sleep(30)
+    time.sleep(5)
