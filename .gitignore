@@ -1,6 +1,7 @@
 .idea/
 *.png
 image.png
+compile.bat
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
